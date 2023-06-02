@@ -15,20 +15,34 @@ from skimage.transform import hough_line, hough_line_peaks
 
 from time import sleep
 
-from droppy.common import (L, R, T, B, positive_int, positive_float,
-                           calculate_angle, positive_int_or_rel)
-from droppy.edgedetection import (sigma_setter, extract_edges)
-from droppy.moviehandling import (extract_grayscale_frames,
+os.chdir(r'C:\Users\c304301\OneDrive - Eli Lilly and Company\Documents\GitHub\droppy-fork\droppy')
+
+# from droppy.common import (L, R, T, B, positive_int, positive_float, calculate_angle, positive_int_or_rel)
+# from droppy.edgedetection import (sigma_setter, extract_edges)
+# from droppy.moviehandling import (extract_grayscale_frames,
+#                                           output_plots,
+#                                           output_datafile)
+# from droppy.imageanalysis import (get_crop, auto_crop, output_fits,
+#                                   crop_points, output_text)
+# from droppy.linearfits import (generate_droplet_width, generate_vectors,
+#                                fit_line)
+# from droppy.circularfits import (generate_circle_vectors, find_intersection,
+#                                  fit_circle)
+# from droppy.bafits import sim_bashforth_adams, fit_bashforth_adams
+
+from common import (L, R, T, B, positive_int, positive_float, calculate_angle, positive_int_or_rel)
+from edgedetection import (sigma_setter, extract_edges)
+from moviehandling import (extract_grayscale_frames,
                                           output_plots,
                                           output_datafile)
-from droppy.imageanalysis import (get_crop, auto_crop, output_fits,
+from imageanalysis import (get_crop, auto_crop, output_fits,
                                   crop_points, output_text)
-from droppy.linearfits import (generate_droplet_width, generate_vectors,
+from linearfits import (generate_droplet_width, generate_vectors,
                                fit_line)
-from droppy.circularfits import (generate_circle_vectors, find_intersection,
+from circularfits import (generate_circle_vectors, find_intersection,
                                  fit_circle)
-from droppy.bafits import sim_bashforth_adams, fit_bashforth_adams
-
+from bafits import sim_bashforth_adams, fit_bashforth_adams
+#%%
 def analyze_frame(im, time, bounds, circ_thresh,
                   lin_thresh, σ, low, high, ε, lim, fit_type):
     '''

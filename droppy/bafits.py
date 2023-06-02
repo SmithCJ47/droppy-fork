@@ -1,4 +1,4 @@
-import numba
+# import numba
 
 import numpy as np
 
@@ -6,7 +6,7 @@ import scipy.optimize as opt
 from scipy.spatial import distance
 from scipy.integrate import solve_ivp
 
-@numba.jit(nopython=True)
+# @numba.jit(nopython=True)
 def bashforth_adams(t, y, a, b):
     '''
     Rate of change of point on droplet profile with respect to the parametric

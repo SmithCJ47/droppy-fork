@@ -1,3 +1,5 @@
+#TODO skimage.viewer is depreciated remove from all code and find a substitute
+
 from skimage.viewer import ImageViewer
 from skimage.viewer.canvastools import RectangleTool
 from skimage.transform import hough_circle, hough_circle_peaks, hough_line, hough_line_peaks
@@ -9,9 +11,13 @@ import numpy as np
 
 import warnings
 
-from droppy.common import L, R, T, B
-from droppy.edgedetection import extract_edges
+# from droppy.common import L, R, T, B
+# from droppy.edgedetection import extract_edges
 
+from common import L, R, T, B
+from edgedetection import extract_edges
+
+# skimage.viewer is depreciated and will be removed in future versions
 def get_crop(image):
     '''
     Show the original image to allow the user to crop any extraneous
@@ -19,7 +25,7 @@ def get_crop(image):
 
     :param image: 2D numpy array grayscale image
     :return: list of [left, right, top, bottom] values for the edges of the
-             bounding box
+              bounding box
     '''
     plt.ioff()
     print('Waiting for input, please crop the image as desired and hit enter')
@@ -85,7 +91,9 @@ def auto_crop(image, pad=25, σ=1, low=None, high=None):
                                f'{angles[0]*180/np.pi: 0.2f}' + u'\N{DEGREE SIGN}'
                                ' with the vertical, but this was expected to be > 80'
                                u'\N{DEGREE SIGN}. Make sure the image is horizontal.'))
-    baseline_y = dists[0]
+    
+    #Added np.abs to this line. Value was being returned as a negative value.
+    baseline_y = np.abs(dists[0])
 
     # Keep the cropped image within bounds
     left = max(z[0] - r - pad, min_left)

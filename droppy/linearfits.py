@@ -1,7 +1,7 @@
 import numpy as np
 
-from droppy.imageanalysis import crop_points
-from droppy.common import L, R, T, B, baseF
+from imageanalysis import crop_points
+from common import L, R, T, B, baseF
 
 def fit_line(points, order=1):
     '''
