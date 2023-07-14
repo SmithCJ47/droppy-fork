@@ -94,7 +94,15 @@ def auto_crop(image, pad=25, σ=1, low=None, high=None):
     
     #Added np.abs to this line. Value was being returned as a negative value.
     baseline_y = np.abs(dists[0])
-
+    
+    #TODO New section for updated baseline & bounds
+    #find height 
+    image_size = image.shape
+    height = image_size[0]
+    baseline_start = (0, int(height/1.76))
+    baseline_end = (image_size[1], int(height/1.76))
+    
+    
     # Keep the cropped image within bounds
     left = max(z[0] - r - pad, min_left)
     right = min(z[0] + r + pad, max_right)
