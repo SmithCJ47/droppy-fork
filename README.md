@@ -4,32 +4,9 @@ A python script that follows a simple logical progression to reliably measure co
 
 ![Logic flow](./images/LogicDiagram.svg)
 
-## Installation
-
-The analysis script can be installed by cloning the repository into your desired working directory or via the following:
-
-```
-$ pip install droppy
-```
-
-With the `pip` installation, the main script can be run from the command line by calling `droppy`; otherwise it must be run from within a Python instance (see Use section below).
-
 ### Dependencies
 
-The following packages must already be installed in your Python environment to contribute to the development of this project:
-* numpy
-* scipy
-* scikit-image
-* imageio
-* matplotlib
-* setuptools
-* wheel
-* twine
-* pytest
-* pip:
-    * imageio-ffmpeg
-    * pytest-subtests
-    * pytest-cov
+
 
 ## Use
 
